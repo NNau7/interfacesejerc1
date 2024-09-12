@@ -66,26 +66,7 @@ namespace interfacesejerc1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            listAlumnos.Items.Clear();
-           
-            List<Estudiante> listEstudiante = new List<Estudiante>();
             
-
-            if (listAlumnos.Visible == false) { listAlumnos.Visible = true; }
-            else { listAlumnos.Visible = false; }
-
-            string path = "C:\\Users\\mauri\\OneDrive\\Escritorio\\listas\\exalumnos.txt";
-            StreamReader archivoALeer = File.OpenText(path);
-            string renglon = archivoALeer.ReadLine();
-            do
-            {
-
-                listAlumnos.Items.Add(renglon);
-                renglon = archivoALeer.ReadLine();
-
-            } while (renglon != null);
-            archivoALeer.Close();
-
         }
 
         private void buttonSalir_Click(object sender, EventArgs e)
@@ -134,38 +115,13 @@ namespace interfacesejerc1
 
         private void buttonDocentes_Click(object sender, EventArgs e)
         {
-            listAlumnos.Items.Clear();
-            if (listAlumnos.Visible == false) { listAlumnos.Visible = true; }
-            else { listAlumnos.Visible = false; }
-
-            string path = "C:\\Users\\mauri\\OneDrive\\Escritorio\\listas\\docentes.txt";
-            StreamReader archivoALeer = File.OpenText(path);
-            string renglon = archivoALeer.ReadLine();
-            do
-            {
-                listAlumnos.Items.Add(renglon);
-                renglon = archivoALeer.ReadLine();
-
-            } while (renglon != null);
-            archivoALeer.Close();
+            frmlistdocentes frmlistdocentes = new frmlistdocentes();
+            frmlistdocentes.Show();
         }
 
         private void buttonNodocentes_Click(object sender, EventArgs e)
         {
-            listAlumnos.Items.Clear();
-            if (listAlumnos.Visible == false) { listAlumnos.Visible = true; }
-            else { listAlumnos.Visible = false; }
-
-            string path = "C:\\Users\\mauri\\OneDrive\\Escritorio\\listas\\nodocentes.txt";
-            StreamReader archivoALeer = File.OpenText(path);
-            string renglon = archivoALeer.ReadLine();
-            do
-            {
-                listAlumnos.Items.Add(renglon);
-                renglon = archivoALeer.ReadLine();
-
-            } while (renglon != null);
-            archivoALeer.Close();
+            
         }
 
         private void listAlumnos_SelectedIndexChanged(object sender, EventArgs e)
@@ -204,8 +160,8 @@ namespace interfacesejerc1
             }
             catch (Exception)
             {
-                MessageBox.Show("PELOTUDO");
-                MessageBox.Show("DOWN");
+                MessageBox.Show("No se pudo cargar el alumno");
+               
             }
             finally 
             {
@@ -250,7 +206,7 @@ namespace interfacesejerc1
                 archivo.WriteLine(est.Estado);
             }
             archivo.Close();
-            MessageBox.Show("BIEN AHI LOCO");
+            MessageBox.Show("Guardado exitoso");
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
