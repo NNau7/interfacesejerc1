@@ -19,7 +19,7 @@ namespace interfacesejerc1
         public List<Docente> ListarDocentes() 
         {
             List<Docente> listDocentes = new List<Docente>();
-            conexion.ConnectionString = "data source=MauriPC; initial catalog=Empleados_DB; integrated security=sspi";
+            conexion.ConnectionString = "data source=MAURIPC; initial catalog=Empleados_DB; integrated security=sspi";
             comand.CommandType = System.Data.CommandType.Text;
             comand.CommandText = "select * from Docentess";
             comand.Connection = conexion;
@@ -29,16 +29,16 @@ namespace interfacesejerc1
             while (reader.Read()) 
             {
                 Docente aux = new Docente();
-                aux.Puesto = reader.GetString(1);
-                aux.Name = reader.GetString(2);
-                aux.Antiguedad = reader.GetInt32(3);
-                aux.Salario = reader.GetInt32(4);
-                aux.Edad = reader.GetInt32(5);
+                aux.Puesto = reader.GetString(0);
+                aux.Name = reader.GetString(1);
+                aux.Antiguedad = reader.GetInt32(2);
+                aux.Salario = reader.GetInt32(3);
+                aux.Edad = reader.GetInt32(4);
                 listDocentes.Add(aux);
-                conexion.Close();
+                
 
             }
-
+            conexion.Close();
 
             return listDocentes;
 

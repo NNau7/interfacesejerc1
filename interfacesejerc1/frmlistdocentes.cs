@@ -34,7 +34,7 @@ namespace interfacesejerc1
                 dataGridView1.DataSource = connect.ListarDocentes();
 
                 dataGridView1.Columns["Puesto"].DisplayIndex = 0;
-                dataGridView1.Columns["Nombre"].DisplayIndex = 1;
+                dataGridView1.Columns["Name"].DisplayIndex = 1;
                 dataGridView1.Columns["Antiguedad"].DisplayIndex = 2;
                 dataGridView1.Columns["Salario"].DisplayIndex = 3;
                 dataGridView1.Columns["Edad"].DisplayIndex = 4;
