@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectSQL.cs" />
+    <Compile Include="ConnectSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cursando.cs" />
     <Compile Include="datosalumno.cs">
       <SubType>Form</SubType>

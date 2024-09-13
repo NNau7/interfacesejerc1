@@ -7,10 +7,11 @@ using Microsoft.SqlServer.Server;
 using System.Net;
 using System.Data.SqlClient;
 using programacionejerc5clases;
+using System.Windows.Forms;
 
 namespace interfacesejerc1
 {
-    internal class ConnectSQL
+    internal class ConnectSQL : frmlistdocentes
     {
         SqlConnection conexion = new SqlConnection();
         SqlCommand comand = new SqlCommand();
@@ -38,14 +39,18 @@ namespace interfacesejerc1
                 
 
             }
-            conexion.Close();
+            
 
             return listDocentes;
 
         }
 
-     
         
-       
+
+
+
+
+
+
     }
 }

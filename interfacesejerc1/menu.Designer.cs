@@ -42,23 +42,23 @@
             this.Layoutunder = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Layoutcentro = new System.Windows.Forms.FlowLayoutPanel();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.gropubox2 = new System.Windows.Forms.GroupBox();
+            this.buttonGuardarArchivo = new System.Windows.Forms.Button();
+            this.buttonSalirsinGuardar = new System.Windows.Forms.Button();
+            this.buttonEliminarSeleccionado = new System.Windows.Forms.Button();
             this.listAlumnos = new System.Windows.Forms.ListBox();
             this.Datosalumno = new System.Windows.Forms.GroupBox();
-            this.gropubox2 = new System.Windows.Forms.GroupBox();
-            this.NameBox = new System.Windows.Forms.TextBox();
-            this.buttonAgregarAlumno = new System.Windows.Forms.Button();
-            this.buttonCancelarAlumno = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.EdadBox = new System.Windows.Forms.NumericUpDown();
-            this.CarreraBox = new System.Windows.Forms.ComboBox();
             this.EstadoBox = new System.Windows.Forms.ComboBox();
-            this.buttonEliminarSeleccionado = new System.Windows.Forms.Button();
-            this.buttonSalirsinGuardar = new System.Windows.Forms.Button();
-            this.buttonGuardarArchivo = new System.Windows.Forms.Button();
+            this.CarreraBox = new System.Windows.Forms.ComboBox();
+            this.EdadBox = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonCancelarAlumno = new System.Windows.Forms.Button();
+            this.buttonAgregarAlumno = new System.Windows.Forms.Button();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.Layoutizq.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,8 +66,8 @@
             this.LayoutSalir.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.Layoutcentro.SuspendLayout();
-            this.Datosalumno.SuspendLayout();
             this.gropubox2.SuspendLayout();
+            this.Datosalumno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EdadBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -241,10 +241,50 @@
             this.Layoutcentro.TabIndex = 3;
             this.Layoutcentro.Paint += new System.Windows.Forms.PaintEventHandler(this.Layoutcentro_Paint);
             // 
-            // openFileDialog1
+            // gropubox2
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.gropubox2.AutoSize = true;
+            this.gropubox2.Controls.Add(this.buttonGuardarArchivo);
+            this.gropubox2.Controls.Add(this.buttonSalirsinGuardar);
+            this.gropubox2.Controls.Add(this.buttonEliminarSeleccionado);
+            this.gropubox2.Location = new System.Drawing.Point(3, 3);
+            this.gropubox2.Name = "gropubox2";
+            this.gropubox2.Size = new System.Drawing.Size(304, 212);
+            this.gropubox2.TabIndex = 2;
+            this.gropubox2.TabStop = false;
+            this.gropubox2.Text = "Menu";
+            this.gropubox2.Visible = false;
+            this.gropubox2.Enter += new System.EventHandler(this.gropubox2_Enter);
+            // 
+            // buttonGuardarArchivo
+            // 
+            this.buttonGuardarArchivo.Location = new System.Drawing.Point(6, 150);
+            this.buttonGuardarArchivo.Name = "buttonGuardarArchivo";
+            this.buttonGuardarArchivo.Size = new System.Drawing.Size(292, 43);
+            this.buttonGuardarArchivo.TabIndex = 2;
+            this.buttonGuardarArchivo.Text = "Guardar En Archivo";
+            this.buttonGuardarArchivo.UseVisualStyleBackColor = true;
+            this.buttonGuardarArchivo.Click += new System.EventHandler(this.buttonGuardarArchivo_Click);
+            // 
+            // buttonSalirsinGuardar
+            // 
+            this.buttonSalirsinGuardar.Location = new System.Drawing.Point(6, 84);
+            this.buttonSalirsinGuardar.Name = "buttonSalirsinGuardar";
+            this.buttonSalirsinGuardar.Size = new System.Drawing.Size(292, 43);
+            this.buttonSalirsinGuardar.TabIndex = 1;
+            this.buttonSalirsinGuardar.Text = "Salir Sin Guardar";
+            this.buttonSalirsinGuardar.UseVisualStyleBackColor = true;
+            this.buttonSalirsinGuardar.Click += new System.EventHandler(this.buttonSalirsinGuardar_Click);
+            // 
+            // buttonEliminarSeleccionado
+            // 
+            this.buttonEliminarSeleccionado.Location = new System.Drawing.Point(6, 19);
+            this.buttonEliminarSeleccionado.Name = "buttonEliminarSeleccionado";
+            this.buttonEliminarSeleccionado.Size = new System.Drawing.Size(292, 43);
+            this.buttonEliminarSeleccionado.TabIndex = 0;
+            this.buttonEliminarSeleccionado.Text = "Eliminar Seleccionado";
+            this.buttonEliminarSeleccionado.UseVisualStyleBackColor = true;
+            this.buttonEliminarSeleccionado.Click += new System.EventHandler(this.buttonEliminarSeleccionado_Click);
             // 
             // listAlumnos
             // 
@@ -277,91 +317,17 @@
             this.Datosalumno.Text = "Ingrese los datos";
             this.Datosalumno.Visible = false;
             // 
-            // gropubox2
+            // EstadoBox
             // 
-            this.gropubox2.AutoSize = true;
-            this.gropubox2.Controls.Add(this.buttonGuardarArchivo);
-            this.gropubox2.Controls.Add(this.buttonSalirsinGuardar);
-            this.gropubox2.Controls.Add(this.buttonEliminarSeleccionado);
-            this.gropubox2.Location = new System.Drawing.Point(3, 3);
-            this.gropubox2.Name = "gropubox2";
-            this.gropubox2.Size = new System.Drawing.Size(304, 212);
-            this.gropubox2.TabIndex = 2;
-            this.gropubox2.TabStop = false;
-            this.gropubox2.Text = "Menu";
-            this.gropubox2.Visible = false;
-            this.gropubox2.Enter += new System.EventHandler(this.gropubox2_Enter);
-            // 
-            // NameBox
-            // 
-            this.NameBox.Location = new System.Drawing.Point(109, 18);
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(124, 20);
-            this.NameBox.TabIndex = 1;
-            this.NameBox.TextChanged += new System.EventHandler(this.Edad_TextChanged);
-            // 
-            // buttonAgregarAlumno
-            // 
-            this.buttonAgregarAlumno.Location = new System.Drawing.Point(402, 130);
-            this.buttonAgregarAlumno.Name = "buttonAgregarAlumno";
-            this.buttonAgregarAlumno.Size = new System.Drawing.Size(95, 33);
-            this.buttonAgregarAlumno.TabIndex = 4;
-            this.buttonAgregarAlumno.Text = "Agregar";
-            this.buttonAgregarAlumno.UseVisualStyleBackColor = true;
-            this.buttonAgregarAlumno.Click += new System.EventHandler(this.buttonAgregarAlumno_Click);
-            // 
-            // buttonCancelarAlumno
-            // 
-            this.buttonCancelarAlumno.Location = new System.Drawing.Point(524, 130);
-            this.buttonCancelarAlumno.Name = "buttonCancelarAlumno";
-            this.buttonCancelarAlumno.Size = new System.Drawing.Size(95, 32);
-            this.buttonCancelarAlumno.TabIndex = 5;
-            this.buttonCancelarAlumno.Text = "Cancelar";
-            this.buttonCancelarAlumno.UseVisualStyleBackColor = true;
-            this.buttonCancelarAlumno.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Nombre";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(361, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Edad";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Carrera";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(361, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Estado";
-            // 
-            // EdadBox
-            // 
-            this.EdadBox.Location = new System.Drawing.Point(411, 19);
-            this.EdadBox.Name = "EdadBox";
-            this.EdadBox.Size = new System.Drawing.Size(124, 20);
-            this.EdadBox.TabIndex = 10;
+            this.EstadoBox.FormattingEnabled = true;
+            this.EstadoBox.Items.AddRange(new object[] {
+            "Promocionado",
+            "Regular",
+            "Libre"});
+            this.EstadoBox.Location = new System.Drawing.Point(411, 71);
+            this.EstadoBox.Name = "EstadoBox";
+            this.EstadoBox.Size = new System.Drawing.Size(124, 21);
+            this.EstadoBox.TabIndex = 12;
             // 
             // CarreraBox
             // 
@@ -377,47 +343,81 @@
             this.CarreraBox.TabIndex = 11;
             this.CarreraBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // EstadoBox
+            // EdadBox
             // 
-            this.EstadoBox.FormattingEnabled = true;
-            this.EstadoBox.Items.AddRange(new object[] {
-            "Promocionado",
-            "Regular",
-            "Libre"});
-            this.EstadoBox.Location = new System.Drawing.Point(411, 71);
-            this.EstadoBox.Name = "EstadoBox";
-            this.EstadoBox.Size = new System.Drawing.Size(124, 21);
-            this.EstadoBox.TabIndex = 12;
+            this.EdadBox.Location = new System.Drawing.Point(411, 19);
+            this.EdadBox.Name = "EdadBox";
+            this.EdadBox.Size = new System.Drawing.Size(124, 20);
+            this.EdadBox.TabIndex = 10;
             // 
-            // buttonEliminarSeleccionado
+            // label4
             // 
-            this.buttonEliminarSeleccionado.Location = new System.Drawing.Point(6, 19);
-            this.buttonEliminarSeleccionado.Name = "buttonEliminarSeleccionado";
-            this.buttonEliminarSeleccionado.Size = new System.Drawing.Size(292, 43);
-            this.buttonEliminarSeleccionado.TabIndex = 0;
-            this.buttonEliminarSeleccionado.Text = "Eliminar Seleccionado";
-            this.buttonEliminarSeleccionado.UseVisualStyleBackColor = true;
-            this.buttonEliminarSeleccionado.Click += new System.EventHandler(this.buttonEliminarSeleccionado_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(361, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Estado";
             // 
-            // buttonSalirsinGuardar
+            // label3
             // 
-            this.buttonSalirsinGuardar.Location = new System.Drawing.Point(6, 84);
-            this.buttonSalirsinGuardar.Name = "buttonSalirsinGuardar";
-            this.buttonSalirsinGuardar.Size = new System.Drawing.Size(292, 43);
-            this.buttonSalirsinGuardar.TabIndex = 1;
-            this.buttonSalirsinGuardar.Text = "Salir Sin Guardar";
-            this.buttonSalirsinGuardar.UseVisualStyleBackColor = true;
-            this.buttonSalirsinGuardar.Click += new System.EventHandler(this.buttonSalirsinGuardar_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(59, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Carrera";
             // 
-            // buttonGuardarArchivo
+            // label2
             // 
-            this.buttonGuardarArchivo.Location = new System.Drawing.Point(6, 150);
-            this.buttonGuardarArchivo.Name = "buttonGuardarArchivo";
-            this.buttonGuardarArchivo.Size = new System.Drawing.Size(292, 43);
-            this.buttonGuardarArchivo.TabIndex = 2;
-            this.buttonGuardarArchivo.Text = "Guardar En Archivo";
-            this.buttonGuardarArchivo.UseVisualStyleBackColor = true;
-            this.buttonGuardarArchivo.Click += new System.EventHandler(this.buttonGuardarArchivo_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(361, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Edad";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(59, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Nombre";
+            // 
+            // buttonCancelarAlumno
+            // 
+            this.buttonCancelarAlumno.Location = new System.Drawing.Point(524, 130);
+            this.buttonCancelarAlumno.Name = "buttonCancelarAlumno";
+            this.buttonCancelarAlumno.Size = new System.Drawing.Size(95, 32);
+            this.buttonCancelarAlumno.TabIndex = 5;
+            this.buttonCancelarAlumno.Text = "Cancelar";
+            this.buttonCancelarAlumno.UseVisualStyleBackColor = true;
+            this.buttonCancelarAlumno.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // buttonAgregarAlumno
+            // 
+            this.buttonAgregarAlumno.Location = new System.Drawing.Point(402, 130);
+            this.buttonAgregarAlumno.Name = "buttonAgregarAlumno";
+            this.buttonAgregarAlumno.Size = new System.Drawing.Size(95, 33);
+            this.buttonAgregarAlumno.TabIndex = 4;
+            this.buttonAgregarAlumno.Text = "Agregar";
+            this.buttonAgregarAlumno.UseVisualStyleBackColor = true;
+            this.buttonAgregarAlumno.Click += new System.EventHandler(this.buttonAgregarAlumno_Click);
+            // 
+            // NameBox
+            // 
+            this.NameBox.Location = new System.Drawing.Point(109, 18);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(124, 20);
+            this.NameBox.TabIndex = 1;
+            this.NameBox.TextChanged += new System.EventHandler(this.Edad_TextChanged);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // saveFileDialog1
             // 
@@ -441,9 +441,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.Layoutcentro.ResumeLayout(false);
             this.Layoutcentro.PerformLayout();
+            this.gropubox2.ResumeLayout(false);
             this.Datosalumno.ResumeLayout(false);
             this.Datosalumno.PerformLayout();
-            this.gropubox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EdadBox)).EndInit();
             this.ResumeLayout(false);
 
